@@ -13,31 +13,30 @@ targetSum = 10
 Salida de ejemplo:
 [-1, 11] // los números podrían estar en orden inverso
 */
-
-const escontrarParSuma = ( matriz = [] , sumaObjetivo = 0 ) => {
+const findTwoNumbers = ( matriz = [] , targetSum = 0 ) => {
 
     if ( matriz.length <= 0 ) {
-        return 'La matriz tiene no tiene que estar vacia';
+        return 'The array does not have to be empty';
     }
 
-    const arraySumaObjetivo = [];
+    const arrayTargetSum = [];
  
     for( let i = 0; i < matriz.length - 1; i++){
 
         for (let j = i + 1; j < matriz.length; j++) {
-            const resultado =  matriz[i] + matriz[j] === sumaObjetivo;
-            if ( resultado ){
-                arraySumaObjetivo.push( [ matriz[i], matriz[j] ]);
+            const result =  matriz[i] + matriz[j] === targetSum;
+            if ( result ){
+                arrayTargetSum.push( [ matriz[i], matriz[j] ]);
             }
           
             
         }
     }
-    return arraySumaObjetivo;
+    return arrayTargetSum;
 
 
 }
 const matriz = [3, 5, -4, 8, 11, 1, -1, 6, 4];
-const sumaObjetivo = 10;
+const targetSum = 10;
 
-console.log(escontrarParSuma( matriz,sumaObjetivo ));
+console.log(escontrarParSuma( matriz,targetSum ));

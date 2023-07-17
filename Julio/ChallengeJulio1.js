@@ -27,7 +27,7 @@ const isSubsequence = ( array = [], subsequence = []) =>{
     return aux === subsequence.length
 }
 
-const elArray = [5, 1, 22, 25, 6, -1, 8, 10]
-const laSequencia = [1, 6, -1, 10]
+const array = [5, 1, 22, 25, 6, -1, 8, 10]
+const subsequence = [1, 6, -1, 10]
 
-console.log(isSubsequence(elArray,laSequencia));
+console.log(isSubsequence(array,subsequence));

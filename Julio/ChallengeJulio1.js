@@ -10,38 +10,24 @@ sequence = [1, 6, -1, 10]
 Salida de ejemplo:
 true
 */
-/* 
-function esSubsecuencia(array: ReadonlyArray<number>, sequence: ReadonlyArray<number>): boolean {
-  return sequence.every((element, sequenceIndex) => element === array.find((value, arrayIndex) =>
-    arrayIndex >= sequenceIndex && value === element
-  ));
-}
-function esSubsecuencia(array, sequence) {
-  return sequence.every((element, sequenceIndex) => element === array.find((value, arrayIndex) =>
-    arrayIndex >= sequenceIndex && value === element
-  ));
-}
 
-*/
+const isSubsequence = ( array = [], subsequence = []) =>{
 
-function esSubsecuencia(array, sequence) {
-    return sequence.every((element, sequenceIndex) => element === array.find((value, arrayIndex) =>
-      arrayIndex >= sequenceIndex && value === element
-    ));
-  }
-const subsecens = (array, subsecuencia) =>{
-    let numberOfsub=0
+    if ( array.length <= 0 || subsequence.length <=0 ) {
+        return 'The array does not have to be empty';
+    }
+
+    let aux= 0
     for (let i = 0; i < array.length; i++) {
-        if(array[i] == subsecuencia[numberOfsub]){
-                console.log(subsecuencia[numberOfsub]);
-                numberOfsub++;
+        if( array[i] === subsequence[aux] ){
+                aux++;
         }
         
     }
-    return numberOfsub === subsecuencia.length
+    return aux === subsequence.length
 }
 
 const elArray = [5, 1, 22, 25, 6, -1, 8, 10]
 const laSequencia = [1, 6, -1, 10]
-// console.log(esSubsecuencia(elArray,laSequencia)); 
-console.log(subsecens(elArray,laSequencia)); 
+
+console.log(isSubsequence(elArray,laSequencia));
